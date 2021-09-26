@@ -8,7 +8,7 @@ spec:
   selector:
     matchLabels:
       app: petclinic
-   template:
+  template:
     metadata:
       labels:
         app: petclinic    
