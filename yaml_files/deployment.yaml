@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: petclinic
+  namespace: petclinic-ns
+spec:
+  replicas: 100
+  selector:
+    matchLabels:
+      app: petclinic
+    spec:
+      containers:
+      - name: petclinic-c
+        image: 096275316283.dkr.ecr.ap-south-1.amazonaws.com/petclinic:abcd
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
